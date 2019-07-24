@@ -1,0 +1,47 @@
+#create function to parse one at a time
+parse_phenotype_wgsa <- function(config, 
+                                 infile, 
+                                 outfile, 
+                                 outfile_dbnsfp){
+    local_config <- load_config(paste0(dir, config)) #load config
+    parse_to_file(source_file = infile,
+                  destination = outfile,
+                  dbnsfp_destination =  outfile_dbnsfp,
+                  config = local_config,
+                  chunk_size = 1000,
+                  verbose = TRUE)
+}
+
+parse_phenotype_wgsa(config = "config_genotypes_ensembl.txt", 
+                     infile = "wgsa_mvpaac.tsv.gz", 
+                     outfile = "wgsa_chip_ensembl_parsed.txt", 
+                     outfile_dbnsfp = "wgsa_chip_ensembl_dbnsfp_parsed.txt")
+
+parse_phenotype_wgsa(config = "config_genotypes_misc.txt", 
+                     infile = "wgsa_chipfile.tsv.gz", 
+                     outfile = "wgsa_chip_misc_parsed.txt", 
+                     outfile_dbnsfp = "wgsa_chip_misc_dbnsfp_parsed.txt")
+
+parse_phenotype_wgsa(config = "config_genotypes_refseq.txt", 
+                     infile = "wgsa_chipfile.tsv.gz", 
+                     outfile = "wgsa_chip_refseq_parsed.txt", 
+                     outfile_dbnsfp = "wgsa_chip_refseq_dbnsfp_parsed.txt")
+
+parse_phenotype_wgsa(config = "config_genotypes_ucsc.txt", 
+                     infile = "wgsa_chipfile.tsv.gz", 
+                     outfile = "wgsa_chip_ucsc_parsed.txt", 
+                     outfile_dbnsfp = "wgsa_chip_ucsc_dbnsfp_parsed.txt")
+
+# standalone script prior functioning -------------------------------------
+
+
+      # local_config <- load_config(paste0(dir, "config_genotypes_ensembl2.txt")) #load config
+      # parse_to_file(source_file = "wgsa_chipfile2.tsv",
+      #               destination = "wgsa_ucsc.txt",
+      #               dbnsfp_destination = "wgsa_ucsc_dbnsfp.txt",
+      #               config = local_config,
+      #               chunk_size = 1000,
+      #               verbose = TRUE)
+      # 
+      # unlink("wgsa_ucsc.txt")
+      # unlink("wgsa_ucsc_dbnsfp.txt")
