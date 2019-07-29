@@ -1,0 +1,14 @@
+field	SNV	indel	dbnsfp	sourceGroup	pivotGroup	pivotChar	parseGroup	transformation	order	notes
+chr 	TRUE	FALSE	FALSE	1	1	|	1	NA	1	
+pos	TRUE	FALSE	FALSE	1	1	|	1	NA	2	
+ref	TRUE	FALSE	FALSE	1	1	|	1	NA	3	
+alt	TRUE	FALSE	FALSE	1	1	|	1	NA	4	
+ANNOVAR_ucsc_Effect	TRUE	FALSE	FALSE	30	30	|	30	NA	113	
+ANNOVAR_ucsc_Transcript_ID	TRUE	FALSE	FALSE	30	30	|	30	NA	114	
+ANNOVAR_ucsc_Gene_ID	TRUE	FALSE	FALSE	30	30	|	30	NA	115	
+ANNOVAR_ucsc_Closest_gene(intergenic_only)	TRUE	FALSE	FALSE	30	30	|	30	NA	116	
+ANNOVAR_ucsc_HGVSc	TRUE	FALSE	FALSE	30	30	|	30	NA	117	
+ANNOVAR_ucsc_HGVSp	TRUE	FALSE	FALSE	30	30	|	30	NA	118	
+ANNOVAR_ucsc_Exon_Rank	TRUE	FALSE	FALSE	30	30	|	30	NA	119	
+ANNOVAR_ucsc_summary	FALSE	FALSE	FALSE	31	31	|	31	NA	120	
+

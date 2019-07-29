@@ -1,0 +1,23 @@
+field	SNV	indel	dbnsfp	sourceGroup	pivotGroup	pivotChar	parseGroup	transformation	order	notes
+chr 	TRUE	FALSE	FALSE	1	1	|	1	NA	1	
+pos	TRUE	FALSE	FALSE	1	1	|	1	NA	2	
+ref	TRUE	FALSE	FALSE	1	1	|	1	NA	3	
+alt	TRUE	FALSE	FALSE	1	1	|	1	NA	4	
+rs_dbSNP151	TRUE	FALSE	FALSE	32		|	32	NA	121	
+aaref	TRUE	FALSE	FALSE	33		|	33	NA	122	
+aaalt	TRUE	FALSE	FALSE	34		|	34	NA	123	
+aapos	TRUE	FALSE	FALSE	35		|	35	NA	124	
+genename	TRUE	FALSE	FALSE	36		|	36	NA	125	
+Ensembl_geneid	FALSE	FALSE	FALSE	37		|	37	NA	126	
+Ensembl_transcriptid	FALSE	FALSE	FALSE	38		|	38	NA	127	
+Ensembl_proteinid	FALSE	FALSE	FALSE	39		|	39	NA	128	
+Uniprot_acc	TRUE	FALSE	FALSE	40		|	40	NA	129	
+Uniprot_entry	TRUE	FALSE	FALSE	40		|	40	NA	130	
+APPRIS	TRUE	FALSE	FALSE	40		|	40	NA	131	
+GENCODE_basic	TRUE	FALSE	FALSE	40		|	40	NA	132	
+TSL	TRUE	FALSE	FALSE	40		|	40	NA	133	
+VEP_canonical	TRUE	FALSE	FALSE	40		|	40	NA	134	
+cds_strand	TRUE	FALSE	FALSE	40		|	40	NA	135	
+refcodon	TRUE	FALSE	FALSE	40		|	40	NA	136	
+codonpos	TRUE	FALSE	FALSE	40		|	40	NA	137	
+codon_degeneracy	TRUE	FALSE	FALSE	40		|	40	NA	138	

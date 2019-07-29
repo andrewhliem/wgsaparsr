@@ -1,0 +1,22 @@
+field	SNV	indel	dbnsfp	sourceGroup	pivotGroup	pivotChar	parseGroup	transformation	order	notes
+chr 	TRUE	FALSE	FALSE	1	1	|	1	NA	1	
+pos	TRUE	FALSE	FALSE	2	2	|	2	NA	2	
+ref	TRUE	FALSE	FALSE	3	3	|	3	NA	3	
+alt	TRUE	FALSE	FALSE	4	4	|	4	NA	4	
+GWAS_catalog_rs	TRUE	FALSE	FALSE	5	5	|	5	NA	5	
+GWAS_catalog_trait	TRUE	FALSE	FALSE	6	6	|	6	NA	6	
+GWAS_catalog_pubmedid	TRUE	FALSE	FALSE	7	7	|	7	NA	7	
+GRASP_rs	TRUE	FALSE	FALSE	8	8	|	8	NA	8	
+GRASP_PMID	TRUE	FALSE	FALSE	9	9	|	9	NA	9	
+GRASP_p-value	TRUE	FALSE	FALSE	10	10	|	10	NA	10	
+GRASP_phenotype	TRUE	FALSE	FALSE	11	11	|	11	NA	11	
+GRASP_ancestry	TRUE	FALSE	FALSE	12	12	|	12	NA	12	
+GRASP_platform	TRUE	FALSE	FALSE	13	13	|	13	NA	13	
+clinvar_rs	TRUE	FALSE	FALSE	14	14	|	14	NA	14	
+clinvar_clnsig	TRUE	FALSE	FALSE	15	15	|	15	NA	15	
+clinvar_trait	TRUE	FALSE	FALSE	16	16	|	16	NA	16	
+clinvar_review	TRUE	FALSE	FALSE	17	17	|	17	NA	17	
+clinvar_hgvs	TRUE	FALSE	FALSE	18	18	|	18	NA	18	
+clinvar_var_source	TRUE	FALSE	FALSE	19	19	|	19	NA	19	
+GTEx_V7_gene	TRUE	FALSE	FALSE	20	20	|	20	NA	20	
+GTEx_V7_tissue	TRUE	FALSE	FALSE	20	20	|	20	NA	21	
