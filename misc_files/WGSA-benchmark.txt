@@ -1,0 +1,186 @@
+#Andrew H. Liem
+#Data Scientist
+#WGSA memory usage and benchmark information
+
+df -h
+# Filesystem      Size  Used Avail Use% Mounted on
+# /dev/hda1       9.8G  1.6G  7.7G  17% /
+# devtmpfs         31G  8.0K   31G   1% /dev
+# tmpfs            31G     0   31G   0% /dev/shm
+# tmpfs            31G   18M   31G   1% /run
+# tmpfs            31G     0   31G   0% /sys/fs/cgroup
+# /dev/xvdf       4.0T  2.6T  1.2T  69% /WGSA
+
+curl http://169.254.169.254/latest/dynamic/instance-identity/document #get metadata of instance
+
+	# {
+	  # "accountId" : "713692290723",
+	  # "availabilityZone" : "us-east-1b",
+	  # "ramdiskId" : null,
+	  # "kernelId" : null,
+	  # "pendingTime" : "2019-06-17T19:35:48Z",
+	  # "architecture" : "x86_64",
+	  # "privateIp" : "10.0.0.141",
+	  # "devpayProductCodes" : null,
+	  # "marketplaceProductCodes" : null,
+	  # "version" : "2017-09-30",
+	  # "region" : "us-east-1",
+	  # "imageId" : "ami-0ed7ba938f1dbc89f",
+	  # "billingProducts" : [ "bp-6ca54005" ],
+	  # "instanceId" : "i-02d34c7ef68636490",
+	  # "instanceType" : "r4.2xlarge"
+	# }
+	
+	
+less -NS /proc/cpuinfo
+
+		# processor	: 0
+		# vendor_id	: GenuineIntel
+		# cpu family	: 6
+		# model		: 79
+		# model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+		# stepping	: 1
+		# microcode	: 0xb000037
+		# cpu MHz		: 2699.984
+		# cache size	: 46080 KB
+		# physical id	: 0
+		# siblings	: 8
+		# core id		: 0
+		# cpu cores	: 4
+		# apicid		: 0
+		# initial apicid	: 0
+		# fpu		: yes
+		# fpu_exception	: yes
+		# cpuid level	: 13
+		# wp		: yes
+		# flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology aperfmperf eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch xsaveopt fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx
+		# bogomips	: 4600.06
+		# clflush size	: 64
+		# cache_alignment	: 64
+		# address sizes	: 46 bits physical, 48 bits virtual
+		# power management:
+
+		# processor	: 1
+		# vendor_id	: GenuineIntel
+		# cpu family	: 6
+		# model		: 79
+		# model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+		# stepping	: 1
+		# microcode	: 0xb000037
+		# cpu MHz		: 2699.984
+		# cache size	: 46080 KB
+		# physical id	: 0
+		# siblings	: 8
+		# core id		: 1
+		# cpu cores	: 4
+		# apicid		: 2
+		# initial apicid	: 2
+		# fpu		: yes
+		# fpu_exception	: yes
+		# cpuid level	: 13
+		# wp		: yes
+		# flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology aperfmperf eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch xsaveopt fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx
+		# bogomips	: 4600.06
+		# clflush size	: 64
+		# cache_alignment	: 64
+		# address sizes	: 46 bits physical, 48 bits virtual
+		# power management:
+
+		# processor	: 2
+		# vendor_id	: GenuineIntel
+		# cpu family	: 6
+		# model		: 79
+		# model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+		# stepping	: 1
+		# microcode	: 0xb000037
+		# cpu MHz		: 2699.894
+		# cache size	: 46080 KB
+		# physical id	: 0
+		# siblings	: 8
+		# core id		: 2
+		# cpu cores	: 4
+		# apicid		: 4
+		# initial apicid	: 4
+		# fpu		: yes
+		# fpu_exception	: yes
+		# cpuid level	: 13
+		# wp		: yes
+		# flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology aperfmperf eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch xsaveopt fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx
+		# bogomips	: 4600.06
+		# clflush size	: 64
+		# cache_alignment	: 64
+		# address sizes	: 46 bits physical, 48 bits virtual
+		# power management:
+
+		# processor	: 3
+		# vendor_id	: GenuineIntel
+		# cpu family	: 6
+		# model		: 79
+		# model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+		# stepping	: 1
+		# microcode	: 0xb000037
+		# cpu MHz		: 2700.433
+		# cache size	: 46080 KB
+		# physical id	: 0
+		# siblings	: 8
+		# core id		: 3
+		# cpu cores	: 4
+		# apicid		: 6
+		# initial apicid	: 6
+		# fpu		: yes
+		# fpu_exception	: yes
+		# cpuid level	: 13
+		# wp		: yes
+		# flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology aperfmperf eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch xsaveopt fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx
+		# bogomips	: 4600.06
+		# clflush size	: 64
+		# cache_alignment	: 64
+		# address sizes	: 46 bits physical, 48 bits virtual
+		# power management:
+
+less /proc/meminfo
+
+# MemTotal:       60909048 kB
+# MemFree:        12933376 kB
+# MemAvailable:   42874620 kB
+# Buffers:           57208 kB
+# Cached:         29350776 kB
+# SwapCached:            0 kB
+# Active:         30834168 kB
+# Inactive:       16030336 kB
+# Active(anon):   17457020 kB
+# Inactive(anon):    17860 kB
+# Active(file):   13377148 kB
+# Inactive(file): 16012476 kB
+# Unevictable:          80 kB
+# Mlocked:              80 kB
+# SwapTotal:             0 kB
+# SwapFree:              0 kB
+# Dirty:                20 kB
+# Writeback:             0 kB
+# AnonPages:      17457204 kB
+# Mapped:            26384 kB
+# Shmem:             18224 kB
+# Slab:             824856 kB
+# SReclaimable:     805036 kB
+# SUnreclaim:        19820 kB
+# KernelStack:        1304 kB
+# PageTables:        36092 kB
+# NFS_Unstable:          0 kB
+# Bounce:                0 kB
+# WritebackTmp:          0 kB
+# CommitLimit:    30454524 kB
+# Committed_AS:   22444552 kB
+# VmallocTotal:   34359738367 kB
+# VmallocUsed:      116268 kB
+# VmallocChunk:   34359618811 kB
+# HardwareCorrupted:     0 kB
+# AnonHugePages:   1703936 kB
+# HugePages_Total:       0
+# HugePages_Free:        0
+# HugePages_Rsvd:        0
+# HugePages_Surp:        0
+# Hugepagesize:       2048 kB
+# DirectMap4k:      135168 kB
+# DirectMap2M:     4059136 kB
+# DirectMap1G:    61865984 kB
